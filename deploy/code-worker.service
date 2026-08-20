@@ -1,0 +1,15 @@
+[Unit]
+Description=Code Execution Worker
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/devcode/worker
+ExecStart=/home/ubuntu/.bun/bin/bun run index.ts
+Restart=always
+RestartSec=5
+EnvironmentFile=/home/ubuntu/devcode/worker/.env
+
+[Install]
+WantedBy=multi-user.target

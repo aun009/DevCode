@@ -3,13 +3,24 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "smoke": "bun run smoke-test.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/pg": "^8.23.1",
+    "prisma": "^7.9.1"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
-    "redis": "^6.2.1"
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
+    "bullmq": "^5.67.3",
+    "dotenv": "^17.2.3",
+    "ioredis": "^5.9.3",
+    "pg": "^8.23.0"
   }
 }

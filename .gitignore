@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+*.tgz
+
+# Prisma generated client (regenerate with: bunx prisma generate)
+**/generated/
+
+# Agent / IDE tooling (not part of this project)
+.agents/
+.windsurf/
+.claude/
+skills-lock.json
+
+# Logs and caches
+logs/
+*.log
+.cache/
+*.tsbuildinfo
+coverage/
+
+# OS
+.DS_Store
+.idea/
