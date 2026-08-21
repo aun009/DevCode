@@ -10,7 +10,11 @@ echo "==> [1/7] System packages"
 sudo apt-get update -qq
 sudo apt-get install -y -qq \
   build-essential gcc g++ git curl unzip \
-  default-jdk-headless python3 nodejs npm
+  default-jdk-headless python3
+
+echo "==> [1b/7] Installing Node.js 20 (Prisma v7 requires 20.19+)"
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - -qq
+sudo apt-get install -y -qq nodejs
 
 echo "==> [2/7] Installing Bun"
 curl -fsSL https://bun.sh/install | bash
