@@ -7,6 +7,11 @@ await rm(outdir, { recursive: true, force: true });
 
 const entrypoints = [...new Bun.Glob("src/**/*.html").scanSync()];
 
+const envApiUrl = process.env.API_URL;
+const apiUrl = (!envApiUrl || envApiUrl.includes("yd8t"))
+  ? "https://devcode-yx51.onrender.com"
+  : envApiUrl;
+
 const result = await Bun.build({
   entrypoints,
   outdir,
@@ -16,7 +21,7 @@ const result = await Bun.build({
   sourcemap: "linked",
   define: {
     "process.env.NODE_ENV": JSON.stringify("production"),
-    "process.env.API_URL": JSON.stringify(process.env.API_URL || "https://devcode-yx51.onrender.com"),
+    "process.env.API_URL": JSON.stringify(apiUrl),
   },
 });
 

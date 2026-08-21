@@ -8,7 +8,8 @@ import "prismjs/components/prism-python";
 import "./index.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const API_BASE_URL = process.env.API_URL || "http://localhost:3000";
+const rawApiUrl = process.env.API_URL || "https://devcode-yx51.onrender.com";
+const API_BASE_URL = rawApiUrl.includes("yd8t") ? "https://devcode-yx51.onrender.com" : rawApiUrl;
 
 const languages = [
   { value: "python",     label: "Python",     file: "main.py",   prism: "python",     icon: "🐍" },
