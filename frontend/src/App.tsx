@@ -8,10 +8,7 @@ import "prismjs/components/prism-python";
 import "./index.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const API_BASE_URL =
-  (typeof process !== "undefined" ? process.env.API_URL : undefined) ??
-  import.meta.env?.API_URL ??
-  "http://localhost:3000";
+const API_BASE_URL = process.env.API_URL || "http://localhost:3000";
 
 const languages = [
   { value: "python",     label: "Python",     file: "main.py",   prism: "python",     icon: "🐍" },
