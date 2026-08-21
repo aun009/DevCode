@@ -30,8 +30,7 @@ if [ -d "$HOME/devcode" ]; then
   echo "Repo already exists — pulling latest"
   cd "$HOME/devcode" && git pull
 else
-  # Replace with your actual repo URL
-  git clone https://github.com/YOUR_USERNAME/devcode.git "$HOME/devcode"
+  git clone https://github.com/aun009/DevCode.git "$HOME/devcode"
 fi
 
 echo "==> [5/7] Install worker dependencies"
