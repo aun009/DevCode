@@ -37,9 +37,10 @@ else
   git clone https://github.com/aun009/DevCode.git "$HOME/devcode"
 fi
 
-echo "==> [5/7] Install worker dependencies"
+echo "==> [5/7] Install worker dependencies & generate Prisma client"
 cd "$HOME/devcode/worker"
 bun install --frozen-lockfile
+bun prisma generate
 
 echo "==> [6/7] Confirm .env exists"
 if [ ! -f "$HOME/devcode/worker/.env" ]; then
